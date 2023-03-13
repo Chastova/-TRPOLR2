@@ -17,7 +17,25 @@ namespace TRPOLR2
         }
         public static Аудитория Аудитория()
         {
-            return new Аудитория();
+            Console.WriteLine($"Введите название: ");
+            string Название = Console.ReadLine();
+            Console.WriteLine($"Введите кол-во посадочных мест: ");
+            bool chek_pm = int.TryParse(Console.ReadLine(), out int Посадочные_места);
+            while (!chek_pm)
+            {
+                Console.WriteLine("Неверный формат данных, введите заново");
+                chek_pm = int.TryParse(Console.ReadLine(), out Посадочные_места);
+            }
+            Console.WriteLine($"Введите кол-во окон: ");
+            bool chek_o = int.TryParse(Console.ReadLine(), out int Окна);
+            while (!chek_o)
+            {
+                Console.WriteLine("Неверный формат данных, введите заново");
+                chek_o = int.TryParse(Console.ReadLine(), out Окна);
+            }
+            List<Оборудование> оборудования = new List<Оборудование>();
+            return new Аудитория(Название, Сотрудник(), Посадочные_места, Окна, оборудования);
+
         }
         public static Вид_занятия Вид_занятия()
         {
@@ -38,6 +56,10 @@ namespace TRPOLR2
         public static Сотрудник Сотрудник()
         {
             return new Сотрудник();
+        }
+        public static Оборудование Оборудование()
+        {
+            return new Оборудование();
         }
     }
 }

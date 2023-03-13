@@ -21,6 +21,16 @@ namespace TRPOLR2
         }
         public static void Print(Аудитория аудитория)
         {
+            Console.WriteLine($"аудитория.Название = {аудитория.Название}");
+            Print(аудитория.Сотрудник);
+            Console.WriteLine($"аудитория.Посадочные_Места = {аудитория.Посадочные_Места}");
+            Console.WriteLine($"аудитория.Окна = {аудитория.Окна}");
+            Console.WriteLine($"аудитория.Оборудования:");
+            foreach (Оборудование ob in аудитория.Оборудования)
+            {
+                Print(ob);
+            }
+
         }
         public static void Print(Вид_занятия вид_занятия)
         {
@@ -35,6 +45,9 @@ namespace TRPOLR2
         {
         }
         public static void Print(Сотрудник сотрудник)
+        {
+        }
+        public static void Print(Оборудование оборудование)
         {
         }
     }
