@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace TRPOLR2
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-
+            while (true)
+            {
+                Console.WriteLine("Введите имя создаваемого класса: ");
+                switch (Console.ReadLine())
+                {
+                    case "Занятие": UI.Print(ClassCreator.Занятие()); break;
+                    case "Аудитория": UI.Print(ClassCreator.Аудитория()); break;
+                    default: Console.WriteLine("Этот класс не реализован"); break;
+                }
+            }
         }
     }
 }
