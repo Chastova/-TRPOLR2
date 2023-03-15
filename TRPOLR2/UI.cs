@@ -11,7 +11,7 @@ namespace TRPOLR2
     {
         public static void Print(Занятие занятие)
         {
-            Console.WriteLine($"Занятие.Дата_проведения = {занятие.Дата_проведения}");
+            Console.WriteLine($"занятие.Дата_проведения = {занятие.Дата_проведения.ToShortDateString()}");
             Print(занятие.Аудитория);
             Print(занятие.Вид_занятия);
             Print(занятие.Группа);

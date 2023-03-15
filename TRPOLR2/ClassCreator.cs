@@ -11,8 +11,41 @@ namespace TRPOLR2
     {
         public static Занятие Занятие()
         {
-            Console.WriteLine($"Введите текущую дату: ");
-            string Дата_проведения = Console.ReadLine();
+            bool check_swith = false;
+            DateTime Дата_проведения = DateTime.Now;
+            do
+            {
+                Console.WriteLine("Желаете указать дату? В противном случае будет задана текущая дата (y/n)");
+                switch (Console.ReadLine())
+                {
+                    case "y":
+                    case "Y":
+                        {
+                            bool check_date;
+                            do
+                            {
+                                Console.WriteLine($"Введите текущую дату. Формат: DD.MM.YYYY");
+                                check_date = DateTime.TryParse(Console.ReadLine(), out Дата_проведения);
+                                if (!check_date)
+                                {
+                                    Console.WriteLine("Дата указана неверно. Попробуйте снова...");
+                                }
+                            }
+                            while (!check_date);
+                            check_swith = true;
+                            break;
+                        }
+                    case "n":
+                    case "N":
+                        {
+                            Console.WriteLine("Указана текущая дата");
+                            check_swith = true;
+                            break;
+                        }
+                    default: break;
+                }
+            }
+            while (!check_swith);
             return new Занятие(Дата_проведения, Дисциплина(), Сотрудник(), Аудитория(), Группа(), Пара(), Вид_занятия());
         }
         public static Аудитория Аудитория()
