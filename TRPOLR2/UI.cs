@@ -50,5 +50,13 @@ namespace TRPOLR2
         public static void Print(Оборудование оборудование)
         {
         }
-    }
+        public static void Print(Подразделение подразделение)
+        {
+			Console.WriteLine($"подразделение.Название = {подразделение.Название}");
+            Print(подразделение.Организация);
+		}
+        public static void Print(Организация организация)
+        {
+        }
+    }   
 }

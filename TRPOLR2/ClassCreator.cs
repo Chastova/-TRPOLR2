@@ -94,5 +94,17 @@ namespace TRPOLR2
         {
             return new Оборудование();
         }
+        public static Организация Организация()
+        {
+            return new Организация();
+        }
+        public static Подразделение Подразделение()
+        {
+			Console.WriteLine($"Введите название: ");
+			string Название = Console.ReadLine();
+            Console.WriteLine();
+
+            return new Подразделение(Название, Руководитель(), Организация());
+        }
     }
 }

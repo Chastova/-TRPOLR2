@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
-    public class Сотрудник
-    {
-
-    }
+	public class Организация
+	{
+	}
 }
