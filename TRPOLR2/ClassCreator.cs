@@ -88,7 +88,17 @@ namespace TRPOLR2
         }
         public static Сотрудник Сотрудник()
         {
-            return new Сотрудник();
+            Console.WriteLine("Введите фамилию: ");
+            string Фамилия = Console.ReadLine();
+            Console.WriteLine("Введите имя: ");
+            string Имя = Console.ReadLine();
+            Console.WriteLine("Введите отчество: ");
+            string Отчество = Console.ReadLine();
+            return new Сотрудник(Фамилия, Имя, Отчество, Должность());
+        }
+        public static Должность Должность()
+        {
+            return new Должность();
         }
         public static Оборудование Оборудование()
         {
