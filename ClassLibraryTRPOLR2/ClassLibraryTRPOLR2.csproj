@@ -51,6 +51,7 @@
     <Compile Include="Оборудование.cs" />
     <Compile Include="Пара.cs" />
     <Compile Include="Сотрудник.cs" />
+    <Compile Include="Специальность.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

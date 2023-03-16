@@ -76,7 +76,29 @@ namespace TRPOLR2
         }
         public static Группа Группа()
         {
-            return new Группа();
+            Console.WriteLine($"Введите название группы: ");
+            string Название = Console.ReadLine();
+            Console.WriteLine($"Введите сокращение: ");
+            string Сокращение = Console.ReadLine();
+            Console.WriteLine($"Введите численность группы: ");
+            bool flag_count = int.TryParse(Console.ReadLine(), out int Численность);
+            while (!flag_count)
+            {
+                Console.WriteLine("Введены неверные данные");
+                flag_count = int.TryParse(Console.ReadLine(), out Численность);
+            }
+            Console.WriteLine($"Введите год поступления: ");
+            bool flag_year = int.TryParse(Console.ReadLine(), out int Год_поступления);
+            while (!flag_year)
+            {
+                Console.WriteLine("Введены неверные данные");
+                flag_year = int.TryParse(Console.ReadLine(), out Год_поступления);
+            }
+            return new Группа(Название, Сокращение, Численность, Год_поступления, Специальность(), Сотрудник());
+        }
+        public static Специальность Специальность()
+        {
+            return new Специальность();
         }
         public static Дисциплина Дисциплина()
         {

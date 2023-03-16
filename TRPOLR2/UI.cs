@@ -37,6 +37,12 @@ namespace TRPOLR2
         }
         public static void Print(Группа группа)
         {
+            Console.WriteLine($"группа.Название = {группа.Название}");
+            Console.WriteLine($"группа.Сокращение = {группа.Сокращение}");
+            Console.WriteLine($"группа.Численность = {группа.Численность}");
+            Console.WriteLine($"группа.Год_поступления = {группа.Год_поступления}");
+            Print(группа.Специальность);
+            Print(группа.Классный_руководитель);
         }
         public static void Print(Дисциплина дисциплина)
         {
@@ -55,6 +61,9 @@ namespace TRPOLR2
         {
         }
         public static void Print(Оборудование оборудование)
+        {
+        }
+        public static void Print(Специальность специальность)
         {
         }
     }
