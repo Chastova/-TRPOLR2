@@ -46,6 +46,13 @@ namespace TRPOLR2
         }
         public static void Print(Сотрудник сотрудник)
         {
+            Console.WriteLine($"сотрудник.Фамилия = {сотрудник.Фамилия}");
+            Console.WriteLine($"сотрудник.Имя = {сотрудник.Имя}");
+            Console.WriteLine($"сотрудник.Отчество = {сотрудник.Отчество}");
+            Print(сотрудник.Должность);
+        }
+        public static void Print(Должность должность)
+        {
         }
         public static void Print(Оборудование оборудование)
         {
