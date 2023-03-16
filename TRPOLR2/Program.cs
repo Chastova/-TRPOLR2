@@ -18,6 +18,7 @@ namespace TRPOLR2
                 {
                     case "Занятие": UI.Print(ClassCreator.Занятие()); break;
                     case "Аудитория": UI.Print(ClassCreator.Аудитория()); break;
+                    case "Пара": UI.Print(ClassCreator.Пара()); break;
                     default: Console.WriteLine("Этот класс не реализован"); break;
                 }
             }
