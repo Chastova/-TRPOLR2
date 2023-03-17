@@ -102,7 +102,11 @@ namespace TRPOLR2
         }
         public static Дисциплина Дисциплина()
         {
-            return new Дисциплина();
+            Console.Write($"Введите имя: ");
+            string имя = Console.ReadLine();
+            Console.Write($"Введите сокращение: ");
+            string сокращение = Console.ReadLine();
+            return new Дисциплина(имя, сокращение);
         }
         public static Пара Пара()
         {
