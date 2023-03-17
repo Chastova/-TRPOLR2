@@ -77,5 +77,13 @@ namespace TRPOLR2
         public static void Print(Специальность специальность)
         {
         }
-    }
+		public static void Print(Подразделение подразделение)
+		{
+			Console.WriteLine($"подразделение.Название = {подразделение.Название}");
+			Print(подразделение.Организация);
+		}
+		public static void Print(Организация организация)
+		{
+		}
+	}
 }
