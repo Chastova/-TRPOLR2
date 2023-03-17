@@ -21,6 +21,7 @@ namespace TRPOLR2
                     case "Сотрудник": UI.Print(ClassCreator.Сотрудник()); break;
                     case "Группа": UI.Print(ClassCreator.Группа()); break;
                     case "Пара": UI.Print(ClassCreator.Пара()); break;
+                    case "Дисциплина": UI.Print(ClassCreator.Дисциплина());break;
                     default: Console.WriteLine("Этот класс не реализован"); break;
                 }
             }
