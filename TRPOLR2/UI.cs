@@ -77,6 +77,8 @@ namespace TRPOLR2
         }
         public static void Print(Специальность специальность)
         {
+            Console.WriteLine("Специальность: " + специальность.Название);
+            Console.WriteLine("Специальность(Сокр.): " + специальность.Сокращение);
         }
 		public static void Print(Подразделение подразделение)
 		{
