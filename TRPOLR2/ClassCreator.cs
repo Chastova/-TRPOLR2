@@ -98,7 +98,11 @@ namespace TRPOLR2
         }
         public static Специальность Специальность()
         {
-            return new Специальность();
+            Console.WriteLine("Введите название специальности: ");
+            string spec = Console.ReadLine();
+            Console.WriteLine("Введите сокращенное название специальности: ");
+            string spec_short = Console.ReadLine();
+            return new Специальность(spec, spec_short);
         }
         public static Дисциплина Дисциплина()
         {
