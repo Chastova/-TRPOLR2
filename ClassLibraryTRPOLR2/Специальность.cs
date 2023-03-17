@@ -8,8 +8,8 @@ namespace ClassLibraryTRPOLR2
 {
     public class Специальность
     {
-        private string Название { get; }
-        private string Сокращение { get; }
+        public string Название { get; }
+        public string Сокращение { get; }
 
         public Специальность(string Spec, string Spec_short)
         {

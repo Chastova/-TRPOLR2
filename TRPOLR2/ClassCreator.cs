@@ -261,5 +261,48 @@ namespace TRPOLR2
         {
             return new Оборудование();
         }
+        
+        public static Студент Студент()
+        {
+            Console.WriteLine("Введите фамилию: ");
+            string Фамилия = Console.ReadLine();
+            Console.WriteLine("Введите имя: ");
+            string Имя = Console.ReadLine();
+            Console.WriteLine("Введите отчество: ");
+            string Отчество = Console.ReadLine();
+            Console.WriteLine("Введите дату рождения в формате (DD.MM.YYYY):");
+            string Дата_рождения;
+
+            string input = Console.ReadLine();
+            string[] split = input.Split('.');
+            uint day = uint.Parse(split[0]);
+            uint month = uint.Parse(split[1]);
+            uint year = uint.Parse(split[2]);
+            if (year < 1 || year > 2023)
+            {
+               
+                    Console.WriteLine($"Неверно введён год, установлена сегодняшняя дата");
+                    Дата_рождения = DateTime.Today.ToString();
+            }
+            if (month < 1 || year > 12)
+            {
+
+                Console.WriteLine($"Неверно введён месяц, установлена сегодняшняя дата");
+                Дата_рождения = DateTime.Today.ToString();
+            }
+            if (day < 1 || year > 31)
+            {
+
+                Console.WriteLine($"Неверно введён день, установлена сегодняшняя дата");
+                Дата_рождения = DateTime.Today.ToString();
+            }
+            if (day > 28 && month == 02)
+            {
+                Console.WriteLine($"Неверно введён день, установлена сегодняшняя дата");
+                Дата_рождения = DateTime.Today.ToString();
+            }
+            Дата_рождения = day.ToString() + month.ToString() + year.ToString();
+            return new Студент(Фамилия, Имя, Отчество, Группа(), Дата_рождения);
+        }
     }
 }
