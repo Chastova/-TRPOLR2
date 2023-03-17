@@ -59,6 +59,7 @@ namespace TRPOLR2
         }
         public static void Print(Смена смена)
         {
+            Console.WriteLine($"смена.Название = {смена.Название}");
         }
 
         public static void Print(Сотрудник сотрудник)

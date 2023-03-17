@@ -227,7 +227,9 @@ namespace TRPOLR2
         }
         public static Смена Смена()
         {
-            return new Смена();
+            Console.WriteLine("Введите название");
+            string Название = Console.ReadLine();
+            return new Смена(Название);
         }
         public static Сотрудник Сотрудник()
         {
