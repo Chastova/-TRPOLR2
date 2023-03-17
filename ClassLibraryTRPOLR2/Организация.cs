@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
-	internal class Организация
+	public class Организация
 	{
 	}
 }

@@ -241,11 +241,11 @@ namespace TRPOLR2
         }
 		public static Подразделение Подразделение()
 		{
-			Console.WriteLine($"Введите название: ");
-			string Название = Console.ReadLine();
-			Console.WriteLine();
+			//Console.WriteLine($"Введите название: ");
+			//string Название = Console.ReadLine();
+			//Console.WriteLine();
 
-			return new Подразделение(Название, Руководитель(), Организация());
+			return new Подразделение( /*Название, Руководитель(), Организация() */);
 		}
 		public static Должность Должность()
         {
