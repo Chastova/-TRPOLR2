@@ -8,5 +8,10 @@ namespace ClassLibraryTRPOLR2
 {
     public class Смена
     {
+        public string Название { get; }
+        public Смена(string название)
+        {
+            Название = название;
+        }
     }
 }
