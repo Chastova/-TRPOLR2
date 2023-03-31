@@ -1,9 +1,9 @@
-﻿using ClassLibraryTRPOLR2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibraryTRPOLR2;
 
 namespace TRPOLR2
 {
@@ -74,6 +74,9 @@ namespace TRPOLR2
         }
         public static void Print(Оборудование оборудование)
         {
+            Console.WriteLine($"оборудование.Название = {оборудование.Название}");
+            Console.WriteLine($"оборудование.Стоимость = {оборудование.Стоимость}");
+            Console.WriteLine($"оборудование.Дата_постановки_на_баланс = {оборудование.Дата_постановки_на_баланс.ToShortDateString()}");
         }
         public static void Print(Специальность специальность)
         {
