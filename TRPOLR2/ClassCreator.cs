@@ -259,7 +259,18 @@ namespace TRPOLR2
         }
         public static Оборудование Оборудование()
         {
-            return new Оборудование();
+            string Название;
+            decimal Стоимость;
+            DateTime Дата_постановки_на_баланс;
+
+            Console.Write("Ведите название: ");
+            Название = Console.ReadLine();
+
+            do{ Console.Write("Введите стоимость: "); } while(!decimal.TryParse(Console.ReadLine(), out Стоимость) || Стоимость <= 0);
+
+            do{ Console.Write("Введите дату постановки на баланс (Формат: DD.MM.YYYY): "); } while (!DateTime.TryParse(Console.ReadLine(), out Дата_постановки_на_баланс) || Дата_постановки_на_баланс > DateTime.Now);
+
+            return new Оборудование(Название, Стоимость, Дата_постановки_на_баланс);
         }
         
         public static Студент Студент()
