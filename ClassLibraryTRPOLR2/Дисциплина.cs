@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
+    /// <summary>
+    /// Task 3 url: https://docs.google.com/document/d/1qCEMkbMRvvHP361IFDeWgSpHfVRUp6BV67nrsjl3fSw/edit?usp=sharing
+    /// </summary>
     public class Дисциплина
     {
         public string Имя { get; }
