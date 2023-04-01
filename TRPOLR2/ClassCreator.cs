@@ -53,21 +53,21 @@ namespace TRPOLR2
             Console.WriteLine($"Введите название: ");
             string Название = Console.ReadLine();
             Console.WriteLine($"Введите кол-во посадочных мест: ");
-            bool chek_pm = int.TryParse(Console.ReadLine(), out int Посадочные_места);
+            bool chek_pm = int.TryParse(Console.ReadLine(), out int КоличествоПосадочныхМест);
             while (!chek_pm)
             {
                 Console.WriteLine("Неверный формат данных, введите заново");
-                chek_pm = int.TryParse(Console.ReadLine(), out Посадочные_места);
+                chek_pm = int.TryParse(Console.ReadLine(), out КоличествоПосадочныхМест);
             }
             Console.WriteLine($"Введите кол-во окон: ");
-            bool chek_o = int.TryParse(Console.ReadLine(), out int Окна);
+            bool chek_o = int.TryParse(Console.ReadLine(), out int КоличествоОкон);
             while (!chek_o)
             {
                 Console.WriteLine("Неверный формат данных, введите заново");
-                chek_o = int.TryParse(Console.ReadLine(), out Окна);
+                chek_o = int.TryParse(Console.ReadLine(), out КоличествоОкон);
             }
             List<Оборудование> оборудования = new List<Оборудование>();
-            return new Аудитория(Название, Сотрудник(), Посадочные_места, Окна, оборудования);
+            return new Аудитория(Название, Сотрудник(), КоличествоПосадочныхМест, КоличествоОкон, оборудования);
 
         }
         public static Вид_занятия Вид_занятия()
