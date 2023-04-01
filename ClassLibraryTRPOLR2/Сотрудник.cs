@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
+    /// <summary>
+    ///Variant 9: https://docs.google.com/document/d/1dhWsZqo-d1x4uk0y45lDVnu4H91wRvpRWKJ0lfCizxY/edit
+    /// </summary>
     public class Сотрудник
     {
         public string Фамилия { get; }
