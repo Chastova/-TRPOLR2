@@ -14,9 +14,9 @@ namespace ClassLibraryTRPOLR2
         public string Название { get; }
         public string Сокращение { get; }
 
-        public Дисциплина(string имя, string сокращение)
+        public Дисциплина(string название, string сокращение)
         {
-            Название = имя;
+            Название = название;
             Сокращение = сокращение;
         }
     }
