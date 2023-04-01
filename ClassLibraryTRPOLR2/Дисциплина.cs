@@ -11,12 +11,12 @@ namespace ClassLibraryTRPOLR2
     /// </summary>
     public class Дисциплина
     {
-        public string Имя { get; }
+        public string Название { get; }
         public string Сокращение { get; }
 
-        public Дисциплина(string имя, string сокращение)
+        public Дисциплина(string название, string сокращение)
         {
-            Имя = имя;
+            Название = название;
             Сокращение = сокращение;
         }
     }
