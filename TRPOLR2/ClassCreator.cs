@@ -261,16 +261,18 @@ namespace TRPOLR2
         {
             string Название;
             decimal Стоимость;
-            DateTime Дата_постановки_на_баланс;
+            DateTime ДатаПостановкиНаБаланс;
 
             Console.Write("Ведите название: ");
             Название = Console.ReadLine();
 
             do{ Console.Write("Введите стоимость: "); } while(!decimal.TryParse(Console.ReadLine(), out Стоимость) || Стоимость <= 0);
 
-            do{ Console.Write("Введите дату постановки на баланс (Формат: DD.MM.YYYY): "); } while (!DateTime.TryParse(Console.ReadLine(), out Дата_постановки_на_баланс) || Дата_постановки_на_баланс > DateTime.Now);
-
-            return new Оборудование(Название, Стоимость, Дата_постановки_на_баланс);
+            Console.Write("Введите дату постановки на баланс (Формат: DD.MM.YYYY): ");
+            if (!DateTime.TryParse(Console.ReadLine(), out ДатаПостановкиНаБаланс) || ДатаПостановкиНаБаланс > DateTime.Now)
+                return new Оборудование(Название, Стоимость);
+            else
+                return new Оборудование(Название, Стоимость, ДатаПостановкиНаБаланс);
         }
         
         public static Студент Студент()
