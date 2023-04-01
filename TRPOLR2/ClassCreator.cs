@@ -106,7 +106,7 @@ namespace TRPOLR2
         }
         public static Дисциплина Дисциплина()
         {
-            Console.Write($"Введите имя: ");
+            Console.Write($"Введите название: ");
             string имя = Console.ReadLine();
             Console.Write($"Введите сокращение: ");
             string сокращение = Console.ReadLine();

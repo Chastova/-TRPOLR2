@@ -46,7 +46,7 @@ namespace TRPOLR2
         }
         public static void Print(Дисциплина дисциплина)
         {
-            Console.WriteLine($"дисциплина.Имя={дисциплина.Имя}");
+            Console.WriteLine($"дисциплина.Имя={дисциплина.Название}");
             Console.WriteLine($"дисциплина.Сокращение={дисциплина.Сокращение}");
         }
         public static void Print(Пара пара)
