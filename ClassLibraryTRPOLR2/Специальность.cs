@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
-    public class Специальность
+    public class Специальность //https://docs.google.com/document/d/1pDw7bbBJDmeqT8VVwp68BSOF_4yd9cNb9xpH_q2KW0E/edit?usp=share_link
     {
-        public string Название { get; }
-        public string Сокращение { get; }
+        private string название { get; }
+        private string сокращение { get; }
 
-        public Специальность(string Spec, string Spec_short)
+        public Специальность(string Spec, string SpecShort)
         {
-            Название = Spec;
-            Сокращение = Spec_short;
+            название = Spec;
+            сокращение = SpecShort;
         }
     }
 }
