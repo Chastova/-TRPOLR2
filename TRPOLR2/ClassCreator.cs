@@ -105,12 +105,12 @@ namespace TRPOLR2
         public static Сотрудник Сотрудник()
         {
             Console.WriteLine("Введите фамилию: ");
-            string Фамилия = Console.ReadLine();
+            string фамилия = Console.ReadLine();
             Console.WriteLine("Введите имя: ");
-            string Имя = Console.ReadLine();
+            string имя = Console.ReadLine();
             Console.WriteLine("Введите отчество: ");
-            string Отчество = Console.ReadLine();
-            return new Сотрудник(Фамилия, Имя, Отчество, Должность());
+            string отчество = Console.ReadLine();
+            return new Сотрудник(фамилия, имя, отчество, Должность());
         }
         public static Подразделение Подразделение()
         {
