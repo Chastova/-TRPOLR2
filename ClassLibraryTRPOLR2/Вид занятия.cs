@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryTRPOLR2
 {
-    public class Вид_занятия
+    public class ВидЗанятия
     {
         
 

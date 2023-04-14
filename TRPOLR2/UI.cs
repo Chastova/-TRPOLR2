@@ -11,13 +11,13 @@ namespace TRPOLR2
     {
         public static void Print(Занятие занятие)
         {
-            Console.WriteLine($"занятие.Дата_проведения = {занятие.Дата_проведения.ToShortDateString()}");
-            Print(занятие.Аудитория);
-            Print(занятие.Вид_занятия);
-            Print(занятие.Группа);
+            Console.WriteLine($"занятие.ДатаПроведения = {занятие.ДатаПроведения.ToShortDateString()}");
             Print(занятие.Дисциплина);
-            Print(занятие.Пара);
             Print(занятие.Сотрудник);
+            Print(занятие.Аудитория);
+            Print(занятие.Группа);
+            Print(занятие.Пара);
+            Print(занятие.ВидЗанятия);
         }
         public static void Print(Аудитория аудитория)
         {
@@ -32,7 +32,7 @@ namespace TRPOLR2
             }
 
         }
-        public static void Print(Вид_занятия вид_занятия)
+        public static void Print(ВидЗанятия видЗанятия)
         {
         }
         public static void Print(Группа группа)
