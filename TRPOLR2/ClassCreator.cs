@@ -76,25 +76,22 @@ namespace TRPOLR2
         }
         public static Группа Группа()
         {
-            Console.WriteLine($"Введите название группы: ");
+            Console.Write($"Введите название группы: ");
             string Название = Console.ReadLine();
-            Console.WriteLine($"Введите сокращение: ");
+            Console.Write($"Введите сокращение: ");
             string Сокращение = Console.ReadLine();
-            Console.WriteLine($"Введите численность группы: ");
-            bool flag_count = int.TryParse(Console.ReadLine(), out int Численность);
-            while (!flag_count)
-            {
-                Console.WriteLine("Введены неверные данные");
-                flag_count = int.TryParse(Console.ReadLine(), out Численность);
+            int Численность;
+            Console.Write($"Введите численность группы: ");
+            while (!int.TryParse(Console.ReadLine(), out Численность) || Численность <= 0) { 
+                Console.Write($"Введены неверные данные. Введите численность группы: ");
             }
-            Console.WriteLine($"Введите год поступления: ");
-            bool flag_year = int.TryParse(Console.ReadLine(), out int Год_поступления);
-            while (!flag_year)
+            int ГодПоступления;
+            Console.Write($"Введите год поступления: ");
+            while (!int.TryParse(Console.ReadLine(), out ГодПоступления) || ГодПоступления <= DateTime.Now.Year - 8 || ГодПоступления > DateTime.Now.Year)
             {
-                Console.WriteLine("Введены неверные данные");
-                flag_year = int.TryParse(Console.ReadLine(), out Год_поступления);
+                Console.Write($"Введены неверные данные. Введите год поступления: ");
             }
-            return new Группа(Название, Сокращение, Численность, Год_поступления, Специальность(), Сотрудник());
+            return new Группа(Название, Сокращение, Численность, ГодПоступления, Специальность(), Сотрудник());
         }
         public static Специальность Специальность()
         {
