@@ -142,14 +142,14 @@ namespace TRPOLR2
             string Отчество = Console.ReadLine();
             return new Сотрудник(Фамилия, Имя, Отчество, Должность());
         }
-        //public static Подразделение Подразделение()
-        //{
-        //    Console.WriteLine($"Введите название: ");
-        //    string Название = Console.ReadLine();
-        //    Console.WriteLine();
-        //    return new Подразделение( Название, Руководитель(), Организация() );
-        //}
-		public static Должность Должность()
+        public static Подразделение Подразделение()
+        {
+            Console.WriteLine($"Введите название: ");
+            string Название = Console.ReadLine();
+            Console.WriteLine();
+            return new Подразделение(Название, Сотрудник(), Организация());
+        }
+        public static Должность Должность()
         {
             return new Должность();
         }
@@ -221,7 +221,12 @@ namespace TRPOLR2
                 Console.WriteLine(Фамилия + " " + Имя + " " + Отчество + " " + ДатаРождения);
                 return new Студент(Фамилия, Имя, Отчество, Группа(), ДатаРождения);
             }
+
            
         }
-    }
+		public static Организация Организация()
+		{
+            return new Организация();
+		}
+	}
 }
