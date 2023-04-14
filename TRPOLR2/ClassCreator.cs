@@ -115,120 +115,16 @@ namespace TRPOLR2
         }
         public static Пара Пара()
         {
-            Console.WriteLine($"Введите часы начала пары: ");
-            if (int.TryParse(Console.ReadLine(), out int ЧасыНачалаПары))
-            {
-                if (ЧасыНачалаПары < 0 || ЧасыНачалаПары >= 23)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    ЧасыНачалаПары = DateTime.Now.Hour;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                ЧасыНачалаПары = DateTime.Now.Hour;
-            }
-            Console.WriteLine($"Введите минуты начала пары: ");
-            if (int.TryParse(Console.ReadLine(), out int МинутыНачалаПары))
-            {
-                if (МинутыНачалаПары < 0 || МинутыНачалаПары >= 59)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    МинутыНачалаПары = DateTime.Now.Minute;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                МинутыНачалаПары = DateTime.Now.Minute;
-            }
-            Console.WriteLine($"Введите часы окончания пары: ");
-            if (int.TryParse(Console.ReadLine(), out int ЧасыКонцаПары))
-            {
-                if (ЧасыКонцаПары < 0 || ЧасыКонцаПары >= 23)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    ЧасыКонцаПары = DateTime.Now.Hour;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                ЧасыКонцаПары = DateTime.Now.Hour;
-            }
-            Console.WriteLine($"Введите минуты окончания пары: ");
-            if (int.TryParse(Console.ReadLine(), out int МинутыКонцаПары))
-            {
-                if (МинутыКонцаПары < 0 || МинутыКонцаПары >= 59)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    МинутыКонцаПары = DateTime.Now.Minute;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                МинутыКонцаПары = DateTime.Now.Minute;
-            }
-            Console.WriteLine($"Введите часы начала перерыва: ");
-            if (int.TryParse(Console.ReadLine(), out int ЧасыНачалаПерерыва))
-            {
-                if (ЧасыНачалаПерерыва < 0 || ЧасыНачалаПерерыва >= 23)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    ЧасыНачалаПерерыва = DateTime.Now.Hour;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                ЧасыНачалаПерерыва = DateTime.Now.Hour;
-            }
-            Console.WriteLine($"Введите минуты начала перерыва: ");
-            if (int.TryParse(Console.ReadLine(), out int МинутыНачалаПерерыва))
-            {
-                if (МинутыНачалаПерерыва < 0 || МинутыНачалаПерерыва >= 59)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    МинутыНачалаПерерыва = DateTime.Now.Minute;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                МинутыНачалаПерерыва = DateTime.Now.Minute;
-            }
-            Console.WriteLine($"Введите часы окончания перерыва: ");
-            if (int.TryParse(Console.ReadLine(), out int ЧасыКонцаПерерыва))
-            {
-                if (ЧасыКонцаПерерыва < 0 || ЧасыКонцаПерерыва >= 23)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    ЧасыКонцаПерерыва = DateTime.Now.Hour;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                ЧасыКонцаПерерыва = DateTime.Now.Hour;
-            }
-            Console.WriteLine($"Введите минуты окончания перерыва: ");
-            if (int.TryParse(Console.ReadLine(), out int МинутыКонцаПерерыва))
-            {
-                if (МинутыКонцаПерерыва < 0 || МинутыКонцаПерерыва >= 59)
-                {
-                    Console.WriteLine($"Неверно введено время, установлено текущее");
-                    МинутыКонцаПерерыва = DateTime.Now.Minute;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Неверно введено время, установлено текущее");
-                МинутыКонцаПерерыва = DateTime.Now.Minute;
-            }
-            return new Пара(ЧасыНачалаПары, МинутыНачалаПары, ЧасыКонцаПары, МинутыКонцаПары,
-                ЧасыНачалаПерерыва, МинутыНачалаПерерыва, ЧасыКонцаПерерыва, МинутыКонцаПерерыва, Смена());
+            Console.WriteLine($"Введите время начала пары в формате (HH:mm): ");
+            string ВремяНачалаПары = Console.ReadLine();
+            Console.WriteLine($"Введите время окончания пары в формате (HH:mm): ");
+            string ВремяОкончанияПары = Console.ReadLine();
+            Console.WriteLine($"Введите время начала перерыва в формате (HH:mm): ");
+            string ВремяНачалаПерерыва = Console.ReadLine();
+            Console.WriteLine($"Введите время окончания перерыва в формате (HH:mm): ");
+            string ВремяОкончанияПерерыва = Console.ReadLine();
+
+            return new Пара(ВремяНачалаПары, ВремяОкончанияПары, ВремяНачалаПерерыва, ВремяОкончанияПерерыва, Смена());
         }
         public static Смена Смена()
         {
@@ -246,13 +142,13 @@ namespace TRPOLR2
             string Отчество = Console.ReadLine();
             return new Сотрудник(Фамилия, Имя, Отчество, Должность());
         }
-        public static Подразделение Подразделение()
-        {
-            Console.WriteLine($"Введите название: ");
-            string Название = Console.ReadLine();
-            Console.WriteLine();
-            return new Подразделение( Название, Руководитель(), Организация() );
-        }
+        //public static Подразделение Подразделение()
+        //{
+        //    Console.WriteLine($"Введите название: ");
+        //    string Название = Console.ReadLine();
+        //    Console.WriteLine();
+        //    return new Подразделение( Название, Руководитель(), Организация() );
+        //}
 		public static Должность Должность()
         {
             return new Должность();
