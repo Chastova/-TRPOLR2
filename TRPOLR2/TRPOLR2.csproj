@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibraryTRPOLR2">
-      <HintPath>..\ClassLibraryTRPOLR2\bin\Debug\ClassLibraryTRPOLR2.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryTRPOLR2\ClassLibraryTRPOLR2.csproj">
+      <Project>{c65b9166-0318-46d9-b7fc-a112ae1b9f2d}</Project>
+      <Name>ClassLibraryTRPOLR2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
