@@ -8,5 +8,6 @@ namespace ClassLibraryTRPOLR2
 {
     public class Должность
     {
+
     }
 }

@@ -246,14 +246,13 @@ namespace TRPOLR2
             string Отчество = Console.ReadLine();
             return new Сотрудник(Фамилия, Имя, Отчество, Должность());
         }
-		public static Подразделение Подразделение()
-		{
-			//Console.WriteLine($"Введите название: ");
-			//string Название = Console.ReadLine();
-			//Console.WriteLine();
-
-			return new Подразделение( /*Название, Руководитель(), Организация() */);
-		}
+        public static Подразделение Подразделение()
+        {
+            Console.WriteLine($"Введите название: ");
+            string Название = Console.ReadLine();
+            Console.WriteLine();
+            return new Подразделение( Название, Руководитель(), Организация() );
+        }
 		public static Должность Должность()
         {
             return new Должность();
