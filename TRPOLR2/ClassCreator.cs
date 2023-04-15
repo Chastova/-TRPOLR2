@@ -127,7 +127,6 @@ namespace TRPOLR2
         {
             string Название;
             decimal Стоимость;
-            DateTime ДатаПостановкиНаБаланс;
 
             Console.Write("Ведите название: ");
             Название = Console.ReadLine();
@@ -135,7 +134,7 @@ namespace TRPOLR2
             do{ Console.Write("Введите стоимость: "); } while(!decimal.TryParse(Console.ReadLine(), out Стоимость) || Стоимость <= 0);
 
             Console.Write("Введите дату постановки на баланс (Формат: DD.MM.YYYY): ");
-            if (!DateTime.TryParse(Console.ReadLine(), out ДатаПостановкиНаБаланс) || ДатаПостановкиНаБаланс > DateTime.Now)
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime  ДатаПостановкиНаБаланс) || ДатаПостановкиНаБаланс > DateTime.Now)
                 return new Оборудование(Название, Стоимость);
             else
                 return new Оборудование(Название, Стоимость, ДатаПостановкиНаБаланс);
