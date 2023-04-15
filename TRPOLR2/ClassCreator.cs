@@ -150,17 +150,15 @@ namespace TRPOLR2
                 string имя = Console.ReadLine();
                 Console.WriteLine("Введите отчество: ");
                 string отчество = Console.ReadLine();
-                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");;                {
-                    if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
-                    {
-                        return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
-                    }
-                    else
-                    {
-                        return new Студент(фамилия, имя, отчество, Группа());
-                    }
+                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
+                {
+                    return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
                 }
-
+                else
+                {
+                    return new Студент(фамилия, имя, отчество, Группа());
+                }
             }
 
         }
