@@ -145,71 +145,22 @@ namespace TRPOLR2
 
             {
                 Console.WriteLine("Введите фамилию: ");
-                string Фамилия = Console.ReadLine();
+                string фамилия = Console.ReadLine();
                 Console.WriteLine("Введите имя: ");
-                string Имя = Console.ReadLine();
+                string имя = Console.ReadLine();
                 Console.WriteLine("Введите отчество: ");
-                string Отчество = Console.ReadLine();
-                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
-                string ДатаРождения = Console.ReadLine();
-
-                bool familia = int.TryParse(Фамилия, out int familia2);
-                bool name = int.TryParse(Имя, out int name2);
-                bool otchestvo = int.TryParse(Отчество, out int otchestvo2);
-                if (familia || name || otchestvo)
-                {
-
-                    Console.WriteLine("Введите ФИО правильно");
-                    return Студент();
-                }
-                while (Фамилия == string.Empty || Имя == string.Empty || Отчество == string.Empty)
-                {
-                    Console.WriteLine("Параметры должны быть введены");
-                    return Студент();
+                string отчество = Console.ReadLine();
+                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");;                {
+                    if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
+                    {
+                        return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
+                    }
+                    else
+                    {
+                        return new Студент(фамилия, имя, отчество, Группа());
+                    }
                 }
 
-
-                if (ДатаРождения == string.Empty)
-                {
-
-                    Console.WriteLine("Дата рождения не введена, установлена сегодняшняя дата");
-                    ДатаРождения = DateTime.Today.ToString();
-                    Console.WriteLine(Фамилия + " " + Имя + " " + Отчество + " " + ДатаРождения);
-                    return new Студент(Фамилия, Имя, Отчество, Группа(), ДатаРождения);
-
-                }
-
-                string[] split = ДатаРождения.Split('.');
-                string day = split[0];
-                string month = split[1];
-                string year = split[2];
-                bool Day = int.TryParse(day, out int day2);
-                bool Month = int.TryParse(day, out int month2);
-                bool Year = int.TryParse(day, out int year2);
-                if (!Day || !Month || !Year)
-                {
-
-                    Console.WriteLine("Введите дату правильно1");
-                    return Студент();
-                }
-                int day3 = Convert.ToInt32(day);
-                int month3 = Convert.ToInt32(month);
-                int year3 = Convert.ToInt32(year);
-                while ((year3 < 1 || year3 > 2023) || (month3 < 1 || month3 > 12) || (day3 < 1 || day3 > 31) || (day3 > 28 && month3 == 2))
-                {
-                    Console.WriteLine("Введите дату правильно");
-                    return Студент();
-                }
-
-
-                if ((year3 > 0 && year3 < 2024) && (month3 > 0 && month3 < 13) && (day3 > 0 && day3 < 32) && (day3 < 29 && month3 == 2))
-                {
-                    ДатаРождения = day2.ToString() + "." + month2.ToString() + "." + year2.ToString();
-
-                }
-
-                Console.WriteLine(Фамилия + " " + Имя + " " + Отчество + " " + ДатаРождения);
-                return new Студент(Фамилия, Имя, Отчество, Группа(), ДатаРождения);
             }
 
         }
