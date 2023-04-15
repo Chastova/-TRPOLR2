@@ -54,14 +54,14 @@ namespace TRPOLR2
             string Название = Console.ReadLine();
             Console.Write($"Введите сокращение: ");
             string Сокращение = Console.ReadLine();
-            int Численность;
+            byte Численность;
             Console.Write($"Введите численность группы: ");
-            while (!int.TryParse(Console.ReadLine(), out Численность) || Численность <= 0) { 
+            while (!byte.TryParse(Console.ReadLine(), out Численность)) { 
                 Console.Write($"Введены неверные данные. Введите численность группы: ");
             }
-            int ГодПоступления;
+            ushort ГодПоступления;
             Console.Write($"Введите год поступления: ");
-            while (!int.TryParse(Console.ReadLine(), out ГодПоступления) || ГодПоступления <= DateTime.Now.Year - 8 || ГодПоступления > DateTime.Now.Year)
+            while (!ushort.TryParse(Console.ReadLine(), out ГодПоступления) || ГодПоступления <= DateTime.Now.Year - 8 || ГодПоступления > DateTime.Now.Year)
             {
                 Console.Write($"Введены неверные данные. Введите год поступления: ");
             }
