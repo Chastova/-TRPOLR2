@@ -8,6 +8,10 @@ namespace ClassLibraryTRPOLR2
 {
     public class Занятие
     {
+        /// <summary>
+        /// Вариант №1 
+        /// https://docs.google.com/document/d/1KZXfKJussGflgWnWylGbFrwmdcn3liYKIsgmtxB1mN0/edit
+        /// </summary>
         public DateTime ДатаПроведения { get; }
         public Дисциплина Дисциплина { get; }
         public Сотрудник Сотрудник { get; }
