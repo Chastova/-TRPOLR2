@@ -13,40 +13,12 @@ namespace ClassLibraryTRPOLR2
         public TimeSpan ВремяНачалаПерерыва { get; }
         public TimeSpan ВремяОкончанияПерерыва { get; }
         public Смена Смена { get; }
-        public Пара(string времяНачалаПары, string времяОкончанияПары, string времяНачалаПерерыва, string времяОкончанияПерерыва, Смена смена)
+        public Пара(TimeSpan времяНачалаПары, TimeSpan времяОкончанияПары, TimeSpan времяНачалаПерерыва, TimeSpan времяОкончанияПерерыва, Смена смена)
         {
-            if ((времяНачалаПары != "") && (TimeSpan.TryParse(времяНачалаПары, out TimeSpan StartTimePara)))
-            {
-                ВремяНачалаПары = StartTimePara;
-            }
-            else
-            {
-                ВремяНачалаПары = DateTime.Now.TimeOfDay;
-            }
-            if ((времяОкончанияПары != "") && (TimeSpan.TryParse(времяОкончанияПары, out TimeSpan EndTimePara)))
-            {
-                ВремяОкончанияПары = EndTimePara;
-            }
-            else
-            {
-                ВремяОкончанияПары = DateTime.Now.TimeOfDay;
-            }
-            if ((времяНачалаПерерыва != "") && (TimeSpan.TryParse(времяНачалаПерерыва, out TimeSpan StartTimePereriv)))
-            {
-                ВремяНачалаПерерыва = StartTimePereriv;
-            }
-            else
-            {
-                ВремяНачалаПерерыва = DateTime.Now.TimeOfDay;
-            }
-            if ((времяОкончанияПерерыва != "") && (TimeSpan.TryParse(времяОкончанияПерерыва, out TimeSpan EndTimePereriv)))
-            {
-                ВремяОкончанияПерерыва = EndTimePereriv;
-            }
-            else
-            {
-                ВремяОкончанияПерерыва = DateTime.Now.TimeOfDay;
-            }
+            ВремяНачалаПары = времяНачалаПары;
+            ВремяОкончанияПары = времяОкончанияПары;
+            ВремяНачалаПерерыва = времяНачалаПерерыва;
+            ВремяОкончанияПерерыва = времяОкончанияПерерыва;
             Смена = смена;
         }
     } //вариант 7: https://docs.google.com/document/d/1r4OjKXg5_5yj6ibHB778UEF5Z1nbUqGdXjpQXbTGWiQ/edit

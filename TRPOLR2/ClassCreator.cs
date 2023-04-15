@@ -93,8 +93,24 @@ namespace TRPOLR2
             string ВремяНачалаПерерыва = Console.ReadLine();
             Console.WriteLine($"Введите время окончания перерыва в формате (HH:mm): ");
             string ВремяОкончанияПерерыва = Console.ReadLine();
+            if (!((ВремяНачалаПары != "") && (TimeSpan.TryParse(ВремяНачалаПары, out TimeSpan StartTimePara))))
+            {
+                StartTimePara = DateTime.Now.TimeOfDay;
+            }
+            if (!((ВремяОкончанияПары != "") && (TimeSpan.TryParse(ВремяОкончанияПары, out TimeSpan EndTimePara))))
+            {
+                EndTimePara = DateTime.Now.TimeOfDay;
+            }
+            if (!((ВремяНачалаПерерыва != "") && (TimeSpan.TryParse(ВремяНачалаПерерыва, out TimeSpan StartTimePereriv))))
+            {
+                StartTimePereriv = DateTime.Now.TimeOfDay;
+            }
+            if (!((ВремяОкончанияПерерыва != "") && (TimeSpan.TryParse(ВремяОкончанияПерерыва , out TimeSpan EndTimePereriv))))
+            {
+                EndTimePereriv = DateTime.Now.TimeOfDay;
+            }
 
-            return new Пара(ВремяНачалаПары, ВремяОкончанияПары, ВремяНачалаПерерыва, ВремяОкончанияПерерыва, Смена());
+            return new Пара(StartTimePara, EndTimePara, StartTimePereriv, EndTimePereriv, Смена());
         }
         public static Смена Смена()
         {
