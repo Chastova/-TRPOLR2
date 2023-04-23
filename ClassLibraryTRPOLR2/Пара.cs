@@ -8,27 +8,46 @@ namespace ClassLibraryTRPOLR2
 {
     public class Пара
     {
-        public int ЧасыНачалаПары { get; }
-        public int МинутыНачалаПары { get; }
-        public int ЧасыКонцаПары { get; }
-        public int МинутыКонцаПары { get; }
-        public int ЧасыНачалаПерерыва { get; }
-        public int МинутыНачалаПерерыва { get; }
-        public int ЧасыКонцаПерерыва { get; }
-        public int МинутыКонцаПерерыва { get; }
+        public TimeSpan ВремяНачалаПары { get; }
+        public TimeSpan ВремяОкончанияПары { get; }
+        public TimeSpan ВремяНачалаПерерыва { get; }
+        public TimeSpan ВремяОкончанияПерерыва { get; }
         public Смена Смена { get; }
-        public Пара(int часыНачалаПары, int минутыНачалаПары, int часыКонцаПары, int минутыКонцаПары,
-            int часыНачалаПерерыва, int минутыНачалаПерерыва, int часыКонцаПерерыва, int минутыКонцаПерерыва, Смена смена)
+        public Пара(string времяНачалаПары, string времяОкончанияПары, string времяНачалаПерерыва, string времяОкончанияПерерыва, Смена смена)
         {
-            ЧасыНачалаПары = часыНачалаПары;
-            МинутыНачалаПары = минутыНачалаПары;
-            ЧасыКонцаПары = часыКонцаПары;
-            МинутыКонцаПары = минутыКонцаПары;
-            ЧасыНачалаПерерыва = часыНачалаПерерыва;
-            МинутыНачалаПерерыва = минутыНачалаПерерыва;
-            ЧасыКонцаПерерыва = часыКонцаПерерыва;
-            МинутыКонцаПерерыва = минутыКонцаПерерыва;
+            if ((времяНачалаПары != "") && (TimeSpan.TryParse(времяНачалаПары, out TimeSpan StartTimePara)))
+            {
+                ВремяНачалаПары = StartTimePara;
+            }
+            else
+            {
+                ВремяНачалаПары = DateTime.Now.TimeOfDay;
+            }
+            if ((времяОкончанияПары != "") && (TimeSpan.TryParse(времяОкончанияПары, out TimeSpan EndTimePara)))
+            {
+                ВремяОкончанияПары = EndTimePara;
+            }
+            else
+            {
+                ВремяОкончанияПары = DateTime.Now.TimeOfDay;
+            }
+            if ((времяНачалаПерерыва != "") && (TimeSpan.TryParse(времяНачалаПерерыва, out TimeSpan StartTimePereriv)))
+            {
+                ВремяНачалаПерерыва = StartTimePereriv;
+            }
+            else
+            {
+                ВремяНачалаПерерыва = DateTime.Now.TimeOfDay;
+            }
+            if ((времяОкончанияПерерыва != "") && (TimeSpan.TryParse(времяОкончанияПерерыва, out TimeSpan EndTimePereriv)))
+            {
+                ВремяОкончанияПерерыва = EndTimePereriv;
+            }
+            else
+            {
+                ВремяОкончанияПерерыва = DateTime.Now.TimeOfDay;
+            }
             Смена = смена;
         }
-    }
+    } //вариант 7: https://docs.google.com/document/d/1r4OjKXg5_5yj6ibHB778UEF5Z1nbUqGdXjpQXbTGWiQ/edit
 }
