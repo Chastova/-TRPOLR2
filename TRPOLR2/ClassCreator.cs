@@ -158,25 +158,21 @@ namespace TRPOLR2
 
         public static Студент Студент()
         {
-
+            Console.WriteLine("Введите фамилию: ");
+            string фамилия = Console.ReadLine();
+            Console.WriteLine("Введите имя: ");
+            string имя = Console.ReadLine();
+            Console.WriteLine("Введите отчество: ");
+            string отчество = Console.ReadLine();
+            Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
             {
-                Console.WriteLine("Введите фамилию: ");
-                string фамилия = Console.ReadLine();
-                Console.WriteLine("Введите имя: ");
-                string имя = Console.ReadLine();
-                Console.WriteLine("Введите отчество: ");
-                string отчество = Console.ReadLine();
-                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
-                if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
-                {
-                    return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
-                }
-                else
-                {
-                    return new Студент(фамилия, имя, отчество, Группа());
-                }
+                return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
             }
-
+            else
+            {
+                return new Студент(фамилия, имя, отчество, Группа());
+            }
         }
         public static Организация Организация()
 		{
