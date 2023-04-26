@@ -178,9 +178,21 @@ namespace TRPOLR2
             }
 
         }
+        public static Руководитель Руководитель()
+        {
+            return new Руководитель();
+        }
         public static Организация Организация()
 		{
-            return new Организация();
-		}
+            Console.WriteLine("Введите название орагнизации");
+            string Название = Console.ReadLine();
+            Console.WriteLine("Введите юридический адрес");
+            string Юридический_адрес = Console.ReadLine();
+            Console.WriteLine("Введите фактический адрес");
+            string Фактический_адрес = Console.ReadLine();
+            return new Организация(Название, Юридический_адрес, Фактический_адрес, Руководитель()) ;
+
+
+        }
 	}
 }

@@ -52,6 +52,7 @@
     <Compile Include="Организация.cs" />
     <Compile Include="Пара.cs" />
     <Compile Include="Подразделение.cs" />
+    <Compile Include="Руководитель.cs" />
     <Compile Include="Смена.cs" />
     <Compile Include="Студент.cs" />
     <Compile Include="Сотрудник.cs" />
