@@ -91,7 +91,12 @@ namespace TRPOLR2
         }
         public static void Print(Организация организация)
 		{
-		}
+            Console.WriteLine($"организация.Название = {организация.Название}");
+            Console.WriteLine($"организация.Фактический_адрес = {организация.Фактический_адрес}");
+            Console.WriteLine($"организация.Юридический_адрес = {организация.Юридический_адрес}");
+            Print(организация.Руководитель);
+
+        }
         public static void Print(Студент студент)
         {
             Console.WriteLine($"студент.Фамилия = {студент.Фамилия}");
@@ -99,6 +104,10 @@ namespace TRPOLR2
             Console.WriteLine($"студент.Отчество = {студент.Отчество}");
             Console.WriteLine($"студент.Дата_рождения = {студент.ДатаРождения.ToShortDateString()}");
             Print(студент.Группа);
+        }
+        public static void Print(Руководитель руководитель)
+        {
+
         }
     }
 }
