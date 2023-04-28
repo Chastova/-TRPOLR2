@@ -11,10 +11,10 @@ namespace ClassLibraryTRPOLR2
         public string Название { get; }
         public string Сокращение { get; }
 
-        public Специальность(string Spec, string SpecShort)
+        public Специальность(string spec, string specShort)
         {
-            Название = Spec;
-            Сокращение = SpecShort;
+            Название = spec;
+            Сокращение = specShort;
         }
     }
 }
