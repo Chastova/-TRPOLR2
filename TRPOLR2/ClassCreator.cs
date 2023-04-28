@@ -27,20 +27,31 @@ namespace TRPOLR2
             Console.WriteLine($"Введите название: ");
             string Название = Console.ReadLine();
             Console.WriteLine($"Введите кол-во посадочных мест: ");
-            bool chek_pm = int.TryParse(Console.ReadLine(), out int КоличествоПосадочныхМест);
+            bool chek_pm = byte.TryParse(Console.ReadLine(), out byte КоличествоПосадочныхМест);
             while (!chek_pm)
             {
                 Console.WriteLine("Неверный формат данных, введите заново");
-                chek_pm = int.TryParse(Console.ReadLine(), out КоличествоПосадочныхМест);
+                chek_pm = byte.TryParse(Console.ReadLine(), out КоличествоПосадочныхМест);
             }
             Console.WriteLine($"Введите кол-во окон: ");
-            bool chek_o = int.TryParse(Console.ReadLine(), out int КоличествоОкон);
-            while (!chek_o)
+            bool chek_ok = byte.TryParse(Console.ReadLine(), out byte КоличествоОкон);
+            while (!chek_ok)
             {
                 Console.WriteLine("Неверный формат данных, введите заново");
-                chek_o = int.TryParse(Console.ReadLine(), out КоличествоОкон);
+                chek_ok = byte.TryParse(Console.ReadLine(), out КоличествоОкон);
             }
             List<Оборудование> оборудования = new List<Оборудование>();
+            bool chek_ob = byte.TryParse(Console.ReadLine(), out byte КоличествоОборудования);
+            while (!chek_ob)
+            {
+                Console.WriteLine("Неверный формат данных, введите заново");
+                chek_ob = byte.TryParse(Console.ReadLine(), out КоличествоОборудования);
+            }
+            while (КоличествоОборудования != 0)
+            {
+                оборудования.Add(Оборудование());
+                КоличествоОборудования--;
+            }
             return new Аудитория(Название, Сотрудник(), КоличествоПосадочныхМест, КоличествоОкон, оборудования);
 
         }
